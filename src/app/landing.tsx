@@ -1,3 +1,36 @@
-export default function Lnading() {
-  return <div className="">hello</div>;
+import Image from 'next/image';
+
+export default function Lnading({ setPosition }) {
+  return (
+    <div className="justify-center flex flex-col items-center min-h-screen bg-background">
+      <div>
+        <div className="mb-20">
+          <Image
+            style={{ margin: '0 auto' }}
+            src="/logo.png"
+            alt="Movibi logo"
+            width={300}
+            height={38}
+          />
+        </div>
+        <h1 className="text-4xl font-extrabold text-center">
+          Find your next movie
+        </h1>
+        <p
+          style={{ margin: '0 auto' }}
+          className="max-w-[380px] text-center text-gray-500 mt-2"
+        >
+          Now your finances are in one place and always under control
+        </p>
+        <div className="flex justify-center mt-8 max-w-[380px]">
+          <button
+            type="button"
+            className="w-[95%] text-white bg-primary hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          >
+            Start
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
