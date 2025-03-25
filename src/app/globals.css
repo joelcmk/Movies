@@ -7,6 +7,7 @@
   --foreground: #171717;
   --primary: #6729fe;
   --primary-hover: #8253f8;
+  --secondary: #e9e4ff;
 }
 
 @media (prefers-color-scheme: dark) {

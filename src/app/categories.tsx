@@ -1,27 +1,43 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function Provider({
+export default function Categories({
   setPosition,
 }: {
   setPosition: (position: number) => void;
 }) {
-  const providers = [
-    { name: 'Netflix', image: '/netflix.png' },
-    { name: 'Hulu', image: '/hulu.png' },
-    { name: 'Amazon Prime', image: '/amazon.png' },
-    { name: 'Disney', image: '/disney.png' },
-    { name: 'Apple TV', image: '/apple.png' },
+  const categories = [
+    'Action',
+    'Adventure',
+    'Animation',
+    'Comedy',
+    'Crime',
+    'Documentary',
+    'Drama',
+    'Family',
+    'Fantasy',
+    'History',
+    'Horror',
+    'Mystery',
+    'Romance',
+    'Science Fiction',
+    'Thriller',
+    'TV Movie',
+    'War',
+    'Western',
   ];
 
-  const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   return (
     <div className=" flex flex-col items-center min-h-screen bg-background">
+      <span className="mt-5">
+        <Image src="/back.png" alt="back button" width={20} height={20} />
+      </span>
       <div>
-        <div className="mb-20"></div>
+        <div className="mb-5"></div>
         <h1 className="text-3xl font-extrabold text-center">
-          Select your providers
+          Select a Category
         </h1>
         <p
           style={{ margin: '0 auto' }}
@@ -45,35 +61,35 @@ export default function Provider({
           />
         </div>
         <div>
-          {providers.map((provider) => (
+          {categories.map((category) => (
             <div
               onClick={() => {
-                if (selectedProviders.includes(provider.name)) {
-                  setSelectedProviders(
-                    selectedProviders.filter(
-                      (selectedProvider) => selectedProvider !== provider.name
+                if (selectedCategories.includes(category)) {
+                  setSelectedCategories(
+                    selectedCategories.filter(
+                      (selectedCategory) => selectedCategory !== category
                     )
                   );
                   return;
                 }
-                setSelectedProviders([...selectedProviders, provider.name]);
+                setSelectedCategories([...selectedCategories, category]);
               }}
-              key={provider.name}
+              key={category}
               className={`flex items-center gap-2 mt-2 hover:bg-secondary h-10 rounded-lg cursor-pointer hover:border-primary hover:border ${
-                selectedProviders.includes(provider.name) &&
+                selectedCategories.includes(category) &&
                 'bg-secondary border-primary border'
               }`}
             >
-              <Image
+              {/* <Image
                 className="ml-5"
                 src={provider.image}
                 alt={provider.name}
                 width={30}
                 height={30}
-              />
-              <span>{provider.name}</span>
+              /> */}
+              <span className="ml-5">{category}</span>
               <div className="ml-auto mr-5">
-                {selectedProviders.includes(provider.name) && (
+                {selectedCategories.includes(category) && (
                   <Image
                     src="/checkbox.png"
                     alt="checkbox"

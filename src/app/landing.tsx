@@ -1,6 +1,10 @@
 import Image from 'next/image';
 
-export default function Lnading({ setPosition }) {
+export default function Lnading({
+  setPosition,
+}: {
+  setPosition: (value: number) => void;
+}) {
   return (
     <div className="justify-center flex flex-col items-center min-h-screen bg-background">
       <div>
@@ -24,6 +28,7 @@ export default function Lnading({ setPosition }) {
         </p>
         <div className="flex justify-center mt-8 max-w-[380px]">
           <button
+            onClick={() => setPosition(1)}
             type="button"
             className="w-[95%] text-white bg-primary hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
