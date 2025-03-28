@@ -5,7 +5,7 @@ import Provider from './provider';
 import Categories from './categories';
 
 export default function Home() {
-  const [position, setPosition] = useState(1);
+  const [position, setPosition] = useState(0);
   return (
     <div>
       {position === 0 && <Landing setPosition={setPosition} />}
