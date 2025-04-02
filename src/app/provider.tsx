@@ -1,31 +1,36 @@
 import Image from 'next/image';
-import { useState } from 'react';
 
 export default function Provider({
   setPosition,
+  selectedProviders,
+  setSelectedProviders,
 }: {
   setPosition: (position: number) => void;
+  selectedProviders: { name: string; image: string; id: number }[];
+  setSelectedProviders: (
+    selectedProviders: { name: string; image: string; id: number }[]
+  ) => void;
 }) {
   const providers = [
-    { name: 'Netflix', image: '/netflix.png' },
-    { name: 'Hulu', image: '/hulu.png' },
-    { name: 'Amazon Prime', image: '/amazon.png' },
-    { name: 'Disney', image: '/disney.png' },
-    { name: 'Apple TV', image: '/apple.png' },
+    { name: 'Netflix', image: '/netflix.png', id: 8 },
+    { name: 'Hulu', image: '/hulu.png', id: 15 },
+    { name: 'Amazon Prime', image: '/amazon.png', id: 9 },
+    { name: 'Disney+', image: '/disney.png', id: 337 },
+    { name: 'Apple TV', image: '/apple.png', id: 350 },
   ];
 
-  const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
+  // const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
 
   return (
     <div className=" flex flex-col items-center min-h-screen bg-background">
       <div>
         <div className="mb-20"></div>
-        <h1 className="text-3xl font-extrabold text-center">
+        <h1 className="text-3xl font-extrabold text-left">
           Select your providers
         </h1>
         <p
           style={{ margin: '0 auto' }}
-          className="max-w-[380px] text-center text-gray-500 mt-2"
+          className="max-w-[380px] text-left text-gray-500 mt-2"
         >
           Don’t worry! It happens. Please enter the email associated with your
           account.
@@ -48,20 +53,29 @@ export default function Provider({
           {providers.map((provider) => (
             <div
               onClick={() => {
-                if (selectedProviders.includes(provider.name)) {
+                if (
+                  selectedProviders.some(
+                    (selectedProvider) =>
+                      selectedProvider.name === provider.name
+                  )
+                ) {
                   setSelectedProviders(
                     selectedProviders.filter(
-                      (selectedProvider) => selectedProvider !== provider.name
+                      (selectedProvider) =>
+                        selectedProvider.name !== provider.name
                     )
                   );
                   return;
                 }
-                setSelectedProviders([...selectedProviders, provider.name]);
+                setSelectedProviders([...selectedProviders, provider]);
               }}
               key={provider.name}
               className={`flex items-center gap-2 mt-2 hover:bg-secondary h-10 rounded-lg cursor-pointer hover:border-primary hover:border ${
-                selectedProviders.includes(provider.name) &&
-                'bg-secondary border-primary border'
+                selectedProviders.some(
+                  (selectedProvider) => selectedProvider.name === provider.name
+                )
+                  ? 'bg-secondary border-primary border'
+                  : ''
               }`}
             >
               <Image
@@ -73,7 +87,9 @@ export default function Provider({
               />
               <span>{provider.name}</span>
               <div className="ml-auto mr-5">
-                {selectedProviders.includes(provider.name) && (
+                {selectedProviders.some(
+                  (selectedProvider) => selectedProvider.name === provider.name
+                ) && (
                   <Image
                     src="/checkbox.png"
                     alt="checkbox"
