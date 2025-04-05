@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -123,13 +124,13 @@ export default function Categories({
             onClick={() => setPosition(1)}
             className="flex justify-between h-[30px]"
           >
-            <Image
+            {/* <Image
               className=" cursor-pointer border border-primaryHover shadow rounded w-10 p-2"
               src="/back.png"
               alt="back button"
               width={20}
               height={20}
-            />
+            /> */}
             <Image
               className="w-10 "
               src="/logo_2.png"

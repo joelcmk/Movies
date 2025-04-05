@@ -2,15 +2,20 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { MovieBase } from '../../utils/types';
 
 export default function SelectMovies({
   setPosition,
-  selectedProviders,
+  // selectedProviders,
   selectedCategories,
+  setSelectedMovies,
+  selectedMovies,
 }: {
   setPosition: (position: number) => void;
-  selectedProviders: { name: string; image: string; id: number }[];
+  // selectedProviders: { name: string; image: string; id: number }[];
   selectedCategories: { id: number; name: string }[];
+  setSelectedMovies: (selectedMovies: MovieBase[]) => void;
+  selectedMovies: MovieBase[];
 }) {
   const key = process.env.NEXT_PUBLIC_TMDB_KEY;
 
@@ -20,24 +25,30 @@ export default function SelectMovies({
   //   (provider) => provider.id
   // )}&api_key=${key}`;
 
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<MovieBase[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [page, setPage] = useState<number>(1);
-  console.log(page);
+
+  // const page = 1;
+
+  // console.log(selectedMovies);
 
   // Providers don't matter here, just for the recommendations
-  const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&region=US&sort_by=popularity.desc&with_genres=${selectedCategories[0].id}&api_key=${key}`;
+  // const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&region=US&sort_by=popularity.desc&with_genres=${selectedCategories[0].id}&api_key=${key}`;
 
   useEffect(() => {
     const fetchDataLoop = async () => {
       const pageNumbers: Set<number> = new Set();
-      while (pageNumbers.size < 10) {
-        const pageNumber = Math.floor(Math.random() * 10) + 1;
-        pageNumbers.add(pageNumber);
+      // while (pageNumbers.size < 10) {
+      //   const pageNumber = Math.floor(Math.random() * 10) + 1;
+      //   pageNumbers.add(pageNumber);
+      // }
+
+      for (let i = 1; i <= 10; i++) {
+        pageNumbers.add(i);
       }
 
-      let newData: any[] = [];
+      let newData: MovieBase[] = [];
       for (const pageNumber of pageNumbers) {
         const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${pageNumber}&region=US&sort_by=popularity.desc&with_genres=${selectedCategories[0].id}&api_key=${key}`;
         try {
@@ -46,6 +57,7 @@ export default function SelectMovies({
             throw new Error(`HTTP error! status: ${response.status}`);
           }
           const jsonData = await response.json();
+          console.log(jsonData);
           newData = [...newData, ...jsonData.results];
         } catch (err: unknown) {
           if (err instanceof Error) {
@@ -86,6 +98,20 @@ export default function SelectMovies({
   //   );
   // }
 
+  const deleteDuplicatedMovies = (movies: MovieBase[]) => {
+    const uniqueMovieIds = new Set();
+    const uniqueMovies = movies.filter((movie) => {
+      if (!uniqueMovieIds.has(movie.id)) {
+        uniqueMovieIds.add(movie.id);
+        return true;
+      }
+      return false;
+    });
+    return uniqueMovies;
+  };
+
+  const cleanData = deleteDuplicatedMovies(data);
+
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center bg-background overflow-hidden">
       <div>
@@ -106,35 +132,63 @@ export default function SelectMovies({
         </div>
 
         <div className="text-2xl font-extrabold text-center mb-4">
-          Select 3-4 movies
+          {` Select 3-4 ${selectedCategories[0].name} films`}
         </div>
-
         <div
           style={{ margin: '0 auto' }}
           className="overflow-auto flex h-[500px] w-[90%] flex-wrap justify-center"
         >
-          {data.map((movie) => (
+          {cleanData.map((movie: MovieBase) => (
             <div
+              onClick={() => {
+                if (
+                  selectedMovies.some(
+                    (selectedMovie) => selectedMovie.id === movie.id
+                  )
+                ) {
+                  setSelectedMovies(
+                    selectedMovies.filter(
+                      (selectedMovie) => selectedMovie.id !== movie.id
+                    )
+                  );
+                  return;
+                }
+                setSelectedMovies([...selectedMovies, movie]);
+              }}
               key={movie.id}
-              className="border border-secondary shadow rounded rounded-lg cursor-pointer w-40 h-60  m-2 hover:border-primary hover:border flex items-center justify-center relative" // Added relative positioning
+              className={`border border-secondary shadow rounded rounded-lg cursor-pointer w-40 h-60 m-2 hover:border-primary hover:border relative`} // Added relative positioning
             >
               <Image
+                className="rounded rounded-lg absolute top-1 right-1"
+                src={`/checkbox.png`}
+                alt="checkbox"
+                width={20}
+                height={20}
+                style={{
+                  display: selectedMovies.some(
+                    (selectedMovie) => selectedMovie.id === movie.id
+                  )
+                    ? 'block'
+                    : 'none',
+                }}
+              />
+              <Image
+                style={{ objectFit: 'contain' }}
                 className="rounded rounded-lg"
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt="back button"
-                objectFit="contain"
                 height={300}
                 width={200}
               />
             </div>
           ))}
         </div>
-
         <div style={{ margin: '0 auto' }} className="mt-5 w-[370px]">
           <button
-            onClick={() => setPosition(3)}
+            onClick={() => setPosition(4)}
             type="button"
-            className="w-full text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5"
+            className="w-full disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5"
+            disabled={selectedMovies.length < 3}
           >
             Continue
           </button>
