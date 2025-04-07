@@ -121,7 +121,7 @@ export default function Categories({
       <div>
         <div className="h-1/4 flex flex-col justify-evenly ">
           <span
-            onClick={() => setPosition(1)}
+            // onClick={() => setPosition(1)}
             className="flex justify-between h-[30px]"
           >
             {/* <Image
