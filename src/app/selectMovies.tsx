@@ -145,7 +145,7 @@ export default function SelectMovies({
         </div>
         <div
           style={{ margin: '0 auto' }}
-          className="overflow-auto flex h-[75vh] w-[100%] flex-wrap justify-center"
+          className="overflow-auto flex h-[70vh] w-[100%] flex-wrap justify-center"
         >
           {cleanData.map((movie: MovieBase) => (
             <div

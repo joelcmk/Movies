@@ -160,7 +160,7 @@ export default function Categories({
         className="w-full flex flex-col items-center "
       >
         <div
-          className="overflow-auto w-[40%] justify h-[65vh] "
+          className="overflow-auto md:w-[40%] w-[98%] justify h-[65vh] p-2 "
           style={{ backgroundColor: 'white' }}
         >
           {filteredCategories.map((category) => (
@@ -178,7 +178,7 @@ export default function Categories({
                 setSelectedCategories([category]);
               }}
               key={category.name}
-              className={`flex items-center gap-5 mt-2 hover:bg-secondary  rounded-lg cursor-pointer hover:border-primary hover:border ${
+              className={`flex items-center gap-5 mt-2 hover:bg-secondary  rounded-lg cursor-pointer  hover:border-primary hover:border p-2 ${
                 selectedCategories.includes(category) &&
                 'bg-secondary border-primary border'
               }`}

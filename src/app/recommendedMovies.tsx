@@ -144,7 +144,7 @@ export default function RecommendedMovies({
         </div>
         <div
           style={{ margin: '0 auto' }}
-          className="overflow-auto flex h-[75vh] w-[90%] flex-wrap justify-center"
+          className="overflow-auto flex h-[70vh] w-[90%] flex-wrap justify-center"
         >
           {filteredRecs.map((movie: MovieBase) => (
             <div

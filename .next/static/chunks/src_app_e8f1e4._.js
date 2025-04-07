@@ -501,7 +501,7 @@ function Categories({ setPosition, selectedCategories, setSelectedCategories }) 
                 className: "w-full flex flex-col items-center ",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "overflow-auto w-[40%] justify h-[65vh] ",
+                        className: "overflow-auto md:w-[40%] w-[98%] justify h-[65vh] p-2 ",
                         style: {
                             backgroundColor: 'white'
                         },
@@ -515,7 +515,7 @@ function Categories({ setPosition, selectedCategories, setSelectedCategories }) 
                                         category
                                     ]);
                                 },
-                                className: `flex items-center gap-5 mt-2 hover:bg-secondary  rounded-lg cursor-pointer hover:border-primary hover:border ${selectedCategories.includes(category) && 'bg-secondary border-primary border'}`,
+                                className: `flex items-center gap-5 mt-2 hover:bg-secondary  rounded-lg cursor-pointer  hover:border-primary hover:border p-2 ${selectedCategories.includes(category) && 'bg-secondary border-primary border'}`,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "ml-5",
@@ -786,7 +786,7 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                     style: {
                         margin: '0 auto'
                     },
-                    className: "overflow-auto flex h-[75vh] w-[100%] flex-wrap justify-center",
+                    className: "overflow-auto flex h-[70vh] w-[100%] flex-wrap justify-center",
                     children: cleanData.map((movie)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             onClick: ()=>{
                                 if (selectedMovies.some((selectedMovie)=>selectedMovie.id === movie.id)) {
@@ -1066,7 +1066,7 @@ selectedMovies }) {
                     style: {
                         margin: '0 auto'
                     },
-                    className: "overflow-auto flex h-[75vh] w-[90%] flex-wrap justify-center",
+                    className: "overflow-auto flex h-[70vh] w-[90%] flex-wrap justify-center",
                     children: filteredRecs.map((movie)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: `border border-secondary shadow rounded rounded-lg cursor-pointer w-40 h-60 m-2 hover:border-primary hover:border relative`,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
