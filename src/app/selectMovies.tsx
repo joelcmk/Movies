@@ -113,15 +113,18 @@ export default function SelectMovies({
   const cleanData = deleteDuplicatedMovies(data);
 
   return (
-    <div className="h-screen w-screen flex flex-col items-center justify-center bg-background overflow-hidden">
+    <div className=" w-screen flex flex-col items-center justify-center  overflow-hidden">
       <div>
         <div
-          style={{ margin: '0 auto' }}
-          className="flex justify-between w-[370px] mb-4"
+          style={{
+            margin: '0 auto',
+            // borderBottom: '2px solid rgb(236, 236, 236)',
+          }}
+          className="flex p-2 justify-between mb-4"
         >
           <span onClick={() => setPosition(2)}>
             <Image
-              className=" cursor-pointer border border-primaryHover shadow rounded w-10 p-2"
+              className=" cursor-pointer border border-primaryHover shadow rounded w-9 p-2"
               src="/back.png"
               alt="back button"
               width={20}
@@ -131,12 +134,18 @@ export default function SelectMovies({
           <Image src="/logo_2.png" alt="logo" width={20} height={20} />
         </div>
 
-        <div className="text-2xl font-extrabold text-center mb-4">
+        <div
+          className="text-2xl font-extrabold text-center"
+          style={{
+            width: '100%',
+            borderBottom: '5px solid rgb(236, 236, 236)',
+          }}
+        >
           {` Select 3-4 ${selectedCategories[0].name} films`}
         </div>
         <div
           style={{ margin: '0 auto' }}
-          className="overflow-auto flex h-[500px] w-[90%] flex-wrap justify-center"
+          className="overflow-auto flex h-[75vh] w-[100%] flex-wrap justify-center"
         >
           {cleanData.map((movie: MovieBase) => (
             <div
@@ -183,11 +192,17 @@ export default function SelectMovies({
             </div>
           ))}
         </div>
-        <div style={{ margin: '0 auto' }} className="mt-5 w-[370px]">
+        <div
+          style={{
+            margin: '0 auto',
+            borderTop: '5px solid rgb(236, 236, 236)',
+          }}
+          className="mt-5 flex flex-col items-center"
+        >
           <button
             onClick={() => setPosition(4)}
             type="button"
-            className="w-full disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5"
+            className="w-[370px] disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5"
             disabled={selectedMovies.length < 3}
           >
             Continue
