@@ -5,6 +5,7 @@ import Provider from './provider';
 import Categories from './categories';
 import SelectMovies from './selectMovies';
 import RecommendedMovies from './recommendedMovies';
+import Movie from './movie';
 import { MovieBase } from '../../utils/types';
 
 export default function Home() {
@@ -16,7 +17,11 @@ export default function Home() {
     { id: number; name: string }[]
   >([]);
   const [selectedMovies, setSelectedMovies] = useState<MovieBase[]>([]);
+  const [selectedRecommendedMovie, setSelectedRecommendedMovie] = useState<
+    MovieBase[]
+  >([]);
 
+  console.log(selectedRecommendedMovie, ' recMovie page.tsx');
   return (
     <div>
       {position === 0 && <Landing setPosition={setPosition} />}
@@ -49,6 +54,14 @@ export default function Home() {
           // selectedProviders={selectedProviders}
           selectedCategories={selectedCategories}
           selectedMovies={selectedMovies}
+          setSelectedRecommendedMovie={setSelectedRecommendedMovie}
+        />
+      )}
+      {position === 5 && (
+        <Movie
+          setPosition={setPosition}
+          selectedCategories={selectedCategories}
+          selectedRecommendedMovie={selectedRecommendedMovie}
         />
       )}
     </div>

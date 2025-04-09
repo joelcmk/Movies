@@ -6,4 +6,5 @@ export interface MovieBase {
   release_date: string;
   popularity: number;
   genre_ids: number[];
+  vote_average: number;
 }

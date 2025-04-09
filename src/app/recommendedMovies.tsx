@@ -10,12 +10,14 @@ export default function RecommendedMovies({
   selectedCategories,
   // setSelectedMovies,
   selectedMovies,
+  setSelectedRecommendedMovie,
 }: {
   setPosition: (position: number) => void;
   // selectedProviders: { name: string; image: string; id: number }[];
   selectedCategories: { id: number; name: string }[];
   // setSelectedMovies: (selectedMovies: unknown[]) => void;
   selectedMovies: unknown[];
+  setSelectedRecommendedMovie: (movie: MovieBase[]) => void;
 }) {
   const key = process.env.NEXT_PUBLIC_TMDB_KEY;
 
@@ -82,11 +84,6 @@ export default function RecommendedMovies({
     );
   }
 
-  // const sorted = uniqueRecs.sort((a, b) => {
-  //   return b.popularity - a.popularity;
-  // });
-  // console.log('filteredRecs ', filteredRecs);
-
   if (loading) {
     return (
       <div className="h-screen flex items-center justify-center bg-background">
@@ -103,25 +100,11 @@ export default function RecommendedMovies({
     );
   }
 
-  // const deleteDuplicatedMovies = (movies: MovieBase[]) => {
-  //   const uniqueMovieIds = new Set();
-  //   const uniqueMovies = movies.filter((movie) => {
-  //     if (!uniqueMovieIds.has(movie.id)) {
-  //       uniqueMovieIds.add(movie.id);
-  //       return true;
-  //     }
-  //     return false;
-  //   });
-  //   return uniqueMovies;
-  // };
-
-  // const cleanData = deleteDuplicatedMovies(data);
-
   return (
     <div className=" w-screen flex flex-col items-center justify-center bg-background overflow-hidden">
       <div>
         <div style={{ margin: '0 auto' }} className="flex justify-between mb-4">
-          <span onClick={() => setPosition(3)}>
+          <span onClick={() => setPosition(4)}>
             <Image
               className=" cursor-pointer border border-primaryHover shadow rounded w-10 p-2"
               src="/back.png"
@@ -148,6 +131,10 @@ export default function RecommendedMovies({
         >
           {filteredRecs.map((movie: MovieBase) => (
             <div
+              onClick={() => {
+                setSelectedRecommendedMovie([movie]);
+                setPosition(5);
+              }}
               key={movie.id}
               className={`border border-secondary shadow rounded rounded-lg cursor-pointer w-40 h-60 m-2 hover:border-primary hover:border relative`} // Added relative positioning
             >
@@ -161,21 +148,6 @@ export default function RecommendedMovies({
               />
             </div>
           ))}
-        </div>
-        <div
-          style={{
-            margin: '0 auto',
-            borderTop: '5px solid rgb(236, 236, 236)',
-          }}
-          className="mt-5 flex flex-col items-center "
-        >
-          <button
-            // onClick={() => setPosition(3)}
-            type="button"
-            className="w-[370px] text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5"
-          >
-            Continue
-          </button>
         </div>
       </div>
     </div>
