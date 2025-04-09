@@ -325,6 +325,14 @@ img, video {
   margin: .5rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
+.m-3 {
+  margin: .75rem;
+}
+
 .-mt-20 {
   margin-top: -5rem;
 }
@@ -363,6 +371,14 @@ img, video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.ml-3 {
+  margin-left: .75rem;
+}
+
+.mt-3 {
+  margin-top: .75rem;
 }
 
 .block {
@@ -463,6 +479,14 @@ img, video {
 
 .max-w-\[380px\] {
   max-width: 380px;
+}
+
+.max-w-\[300px\] {
+  max-width: 300px;
+}
+
+.max-w-\[80\%\] {
+  max-width: 80%;
 }
 
 .flex-1 {
@@ -647,6 +671,16 @@ img, video {
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-extrabold {
   font-weight: 800;
 }
@@ -657,6 +691,10 @@ img, video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .text-blue-600 {
@@ -696,6 +734,10 @@ img, video {
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity, 1));
+}
+
+.text-secondary {
+  color: var(--secondary);
 }
 
 .antialiased {
