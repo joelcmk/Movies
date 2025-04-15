@@ -113,7 +113,7 @@ export default function SelectMovies({
   const cleanData = deleteDuplicatedMovies(data);
 
   return (
-    <div className=" w-screen flex flex-col items-center justify-center  overflow-hidden">
+    <div className="dark:bg-black w-screen flex flex-col items-center justify-center  overflow-hidden">
       <div>
         <div
           style={{
@@ -141,7 +141,7 @@ export default function SelectMovies({
             borderBottom: '5px solid rgb(236, 236, 236)',
           }}
         >
-          {` Select 3-4 ${selectedCategories[0].name} films`}
+          <h2 className="dark:text-white">{` Select 3-4 ${selectedCategories[0].name} films`}</h2>
         </div>
         <div
           style={{ margin: '0 auto' }}
@@ -202,7 +202,7 @@ export default function SelectMovies({
           <button
             onClick={() => setPosition(4)}
             type="button"
-            className="w-[370px] disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5"
+            className="w-[370px] disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 mt-5"
             disabled={selectedMovies.length < 3}
           >
             Continue
