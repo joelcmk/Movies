@@ -22,8 +22,6 @@ export default function Movie({
   selectedRecommendedMovie: MovieBase[];
 }) {
   console.log('selectedCategory', selectedCategories);
-  // const [reviewWholeNumber, setReviewWholeNumber] = useState(0);
-  // const [reviewDecimalNumber, setReviewDecimalNumber] = useState(0);
 
   function getDecimal(floatNum: number) {
     const whole = Math.floor(floatNum);
@@ -49,14 +47,14 @@ export default function Movie({
   const movie = selectedRecommendedMovie[0];
 
   return (
-    <div className=" w-screen flex flex-col items-center justify-center bg-background overflow-hidden">
+    <div className="h-full w-screen flex flex-col items-center justify-center bg-background overflow-hidden">
       <div
         style={{
           margin: '0 auto',
           width: '100%',
           borderBottom: '5px solid rgb(236, 236, 236)',
         }}
-        className="flex justify-between mb-4"
+        className="flex justify-between p-2 mb-4"
       >
         <span onClick={() => setPosition(4)}>
           <Image
@@ -69,16 +67,17 @@ export default function Movie({
         </span>
         <Image src="/logo_2.png" alt="logo" width={20} height={20} />
       </div>
-      <div className="flex max-w-[80%]">
+      <div className="flex flex-wrap md:flex-nowrap w-[100%] md:max-w-[80%]">
+        {/* Poster image */}
         <Image
           style={{ objectFit: 'contain' }}
-          className="rounded rounded-lg m-3"
+          className="rounded rounded-lg m-3 w-[90%] md:w-[30%]"
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-          alt="back button"
+          alt="Movie_poster"
           height={300}
           width={200}
         />
-        <div className="m-3">
+        <div className="m-3 md:w-60%">
           {/* Rating */}
           <div className="flex items-center">
             {Array.from({ length: 10 }).map((_, index) =>

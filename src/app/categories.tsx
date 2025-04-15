@@ -160,8 +160,8 @@ export default function Categories({
         className="w-full flex flex-col items-center "
       >
         <div
-          className="overflow-auto md:w-[40%] w-[98%] justify h-[65vh] p-2 "
-          style={{ backgroundColor: 'white' }}
+          className="overflow-auto md:w-[40%] w-[98%] justify h-[65vh] p-2 bg-white dark:bg-black"
+          // style={{ backgroundColor: 'white'}}
         >
           {filteredCategories.map((category) => (
             <div
@@ -178,9 +178,9 @@ export default function Categories({
                 setSelectedCategories([category]);
               }}
               key={category.name}
-              className={`flex items-center gap-5 mt-2 hover:bg-secondary  rounded-lg cursor-pointer  hover:border-primary hover:border p-2 ${
+              className={`flex items-center gap-5 mt-2 hover:bg-secondary hover:dark:bg-black rounded-lg cursor-pointer hover:border-primary hover:border p-2 ${
                 selectedCategories.includes(category) &&
-                'bg-secondary border-primary border'
+                'bg-secondary border-primary border dark:bg-black'
               }`}
             >
               <span className="ml-5">{category.name}</span>
@@ -208,7 +208,7 @@ export default function Categories({
           <button
             onClick={() => setPosition(3)}
             type="button"
-            className="min-w-[370px] disabled:opacity-75 m-2 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            className="min-w-[370px] disabled:opacity-65 m-2 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none "
             disabled={selectedCategories.length === 0}
           >
             Continue

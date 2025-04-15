@@ -101,12 +101,15 @@ export default function RecommendedMovies({
   }
 
   return (
-    <div className=" w-screen flex flex-col items-center justify-center bg-background overflow-hidden">
+    <div className="h-screen flex flex-col items-center  bg-background overflow-hidden">
       <div>
-        <div style={{ margin: '0 auto' }} className="flex justify-between mb-4">
-          <span onClick={() => setPosition(4)}>
+        <div
+          style={{ margin: '0 auto' }}
+          className="flex p-2 justify-between mb-4"
+        >
+          <span onClick={() => setPosition(3)}>
             <Image
-              className=" cursor-pointer border border-primaryHover shadow rounded w-10 p-2"
+              className=" cursor-pointer border border-primaryHover shadow rounded w-9 p-2"
               src="/back.png"
               alt="back button"
               width={20}
@@ -127,7 +130,7 @@ export default function RecommendedMovies({
         </div>
         <div
           style={{ margin: '0 auto' }}
-          className="overflow-auto flex h-[70vh] w-[90%] flex-wrap justify-center"
+          className="overflow-auto flex h-[70vh] w-[100%] flex-wrap justify-center"
         >
           {filteredRecs.map((movie: MovieBase) => (
             <div
