@@ -398,7 +398,7 @@ function Categories({ setPosition, selectedCategories, setSelectedCategories }) 
         setFilteredCategories(filteredCategories);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: " flex flex-col items-center justify-center bg-background",
+        className: "h-screen flex flex-col items-center  bg-background overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "w-full pb-2",
@@ -501,7 +501,7 @@ function Categories({ setPosition, selectedCategories, setSelectedCategories }) 
                 className: "w-full flex flex-col items-center ",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "overflow-auto md:w-[40%] w-[98%] justify h-[65vh] p-2 bg-white dark:bg-black",
+                        className: "overflow-auto md:w-[40%] w-[98%] justify h-[70vh] p-2 bg-white dark:bg-black",
                         children: filteredCategories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 onClick: ()=>{
                                     if (selectedCategories.includes(category)) {
@@ -551,11 +551,10 @@ function Categories({ setPosition, selectedCategories, setSelectedCategories }) 
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-full flex flex-col items-center",
+                        className: "w-full flex justify-center items-center h-[10vh] bg-background",
                         style: {
                             width: '100%',
-                            borderTop: '5px solid rgb(236, 236, 236)',
-                            backgroundColor: 'white'
+                            borderTop: '5px solid rgb(236, 236, 236)'
                         },
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             onClick: ()=>setPosition(3),
@@ -565,7 +564,7 @@ function Categories({ setPosition, selectedCategories, setSelectedCategories }) 
                             children: "Continue"
                         }, void 0, false, {
                             fileName: "[project]/src/app/categories.tsx",
-                            lineNumber: 208,
+                            lineNumber: 207,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
@@ -724,7 +723,7 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
     };
     const cleanData = deleteDuplicatedMovies(data);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "dark:bg-black w-screen flex flex-col items-center justify-center  overflow-hidden",
+        className: "h-screen flex flex-col items-center  bg-background overflow-hidden",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -743,12 +742,12 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                                 height: 20
                             }, void 0, false, {
                                 fileName: "[project]/src/app/selectMovies.tsx",
-                                lineNumber: 126,
+                                lineNumber: 125,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/selectMovies.tsx",
-                            lineNumber: 125,
+                            lineNumber: 124,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -758,7 +757,7 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                             height: 20
                         }, void 0, false, {
                             fileName: "[project]/src/app/selectMovies.tsx",
-                            lineNumber: 134,
+                            lineNumber: 133,
                             columnNumber: 11
                         }, this)
                     ]
@@ -778,19 +777,19 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                         children: ` Select 3-4 ${selectedCategories[0].name} films`
                     }, void 0, false, {
                         fileName: "[project]/src/app/selectMovies.tsx",
-                        lineNumber: 144,
+                        lineNumber: 143,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/selectMovies.tsx",
-                    lineNumber: 137,
+                    lineNumber: 136,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     style: {
                         margin: '0 auto'
                     },
-                    className: "overflow-auto flex h-[70vh] w-[100%] flex-wrap justify-center",
+                    className: "overflow-auto flex h-[80vh] w-[100%] flex-wrap justify-center",
                     children: cleanData.map((movie)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             onClick: ()=>{
                                 if (selectedMovies.some((selectedMovie)=>selectedMovie.id === movie.id)) {
@@ -815,7 +814,7 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/selectMovies.tsx",
-                                    lineNumber: 170,
+                                    lineNumber: 169,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -829,18 +828,18 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                                     width: 200
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/selectMovies.tsx",
-                                    lineNumber: 184,
+                                    lineNumber: 183,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, movie.id, true, {
                             fileName: "[project]/src/app/selectMovies.tsx",
-                            lineNumber: 151,
+                            lineNumber: 150,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/selectMovies.tsx",
-                    lineNumber: 146,
+                    lineNumber: 145,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -848,21 +847,21 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                         margin: '0 auto',
                         borderTop: '5px solid rgb(236, 236, 236)'
                     },
-                    className: "mt-5 flex flex-col items-center",
+                    className: "mt-5 h-[10vh] flex justify-center items-center",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setPosition(4),
                         type: "button",
-                        className: "w-[370px] disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 mt-5",
+                        className: "w-[370px] disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 ",
                         disabled: selectedMovies.length < 3,
                         children: "Continue"
                     }, void 0, false, {
                         fileName: "[project]/src/app/selectMovies.tsx",
-                        lineNumber: 202,
+                        lineNumber: 201,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/selectMovies.tsx",
-                    lineNumber: 195,
+                    lineNumber: 194,
                     columnNumber: 9
                 }, this)
             ]
@@ -1054,7 +1053,7 @@ selectedMovies, setSelectedRecommendedMovie }) {
                     style: {
                         margin: '0 auto'
                     },
-                    className: "overflow-auto flex h-[70vh] w-[100%] flex-wrap justify-center",
+                    className: "overflow-auto flex h-[85vh] w-[100%] flex-wrap justify-center",
                     children: filteredRecs.map((movie)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             onClick: ()=>{
                                 setSelectedRecommendedMovie([

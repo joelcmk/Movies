@@ -26,7 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased
+ h-full  // Ensure body takes full height of html
+ bg-white dark:bg-black // Example: white in light, black in dark
+`}
       >
         {children}
         <Analytics />

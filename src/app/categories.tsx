@@ -111,7 +111,7 @@ export default function Categories({
   };
 
   return (
-    <div className=" flex flex-col items-center justify-center bg-background">
+    <div className="h-screen flex flex-col items-center  bg-background overflow-hidden">
       <div
         className="w-full pb-2"
         style={{ width: '100%', borderBottom: '5px solid rgb(236, 236, 236)' }}
@@ -160,7 +160,7 @@ export default function Categories({
         className="w-full flex flex-col items-center "
       >
         <div
-          className="overflow-auto md:w-[40%] w-[98%] justify h-[65vh] p-2 bg-white dark:bg-black"
+          className="overflow-auto md:w-[40%] w-[98%] justify h-[70vh] p-2 bg-white dark:bg-black"
           // style={{ backgroundColor: 'white'}}
         >
           {filteredCategories.map((category) => (
@@ -198,11 +198,10 @@ export default function Categories({
           ))}
         </div>
         <div
-          className="w-full flex flex-col items-center"
+          className="w-full flex justify-center items-center h-[10vh] bg-background"
           style={{
             width: '100%',
             borderTop: '5px solid rgb(236, 236, 236)',
-            backgroundColor: 'white',
           }}
         >
           <button
