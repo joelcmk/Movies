@@ -198,7 +198,7 @@ export default function Categories({
           ))}
         </div>
         <div
-          className="w-full flex justify-center items-center h-[10vh] bg-background"
+          className="w-full flex justify-center items-center h-[8vh] bg-background"
           style={{
             width: '100%',
             borderTop: '5px solid rgb(236, 236, 236)',

@@ -197,7 +197,7 @@ export default function SelectMovies({
             margin: '0 auto',
             borderTop: '5px solid rgb(236, 236, 236)',
           }}
-          className="mt-5 h-[10vh] flex justify-center items-center"
+          className="mt-5 h-[8vh] flex justify-center items-center"
         >
           <button
             onClick={() => setPosition(4)}

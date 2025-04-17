@@ -521,6 +521,10 @@ img, video {
   height: 75vh;
 }
 
+.h-\[8vh\] {
+  height: 8vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
