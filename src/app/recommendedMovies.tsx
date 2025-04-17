@@ -126,7 +126,8 @@ export default function RecommendedMovies({
             borderBottom: '5px solid rgb(236, 236, 236)',
           }}
         >
-          {` List of recommended films`}
+          {` Your Custom Movie Recommendations
+`}
         </div>
         <div
           style={{ margin: '0 auto' }}

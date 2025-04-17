@@ -133,14 +133,15 @@ export default function SelectMovies({
           <Image src="/logo_2.png" alt="logo" width={20} height={20} />
         </div>
 
-        <div
-          className="text-2xl font-extrabold text-center"
-          style={{
-            width: '100%',
-            borderBottom: '5px solid rgb(236, 236, 236)',
-          }}
-        >
-          <h2 className="dark:text-white">{` Select 3-4 ${selectedCategories[0].name} films`}</h2>
+        <div className="flex flex-col items-center">
+          <h1 className="text-2xl w-[380px] md:w-[100%] font-extrabold text-center">
+            {` Which ${selectedCategories[0].name} Movies Did You Like?`}
+          </h1>
+          <p className="w-[380px] md:w-[100%] text-center text-gray-500">
+            Pick at least 3 (and up to 5) movies from this list that you
+            genuinely enjoyed. The more you select, the better your
+            recommendations!
+          </p>
         </div>
         <div
           style={{ margin: '0 auto' }}
@@ -204,7 +205,7 @@ export default function SelectMovies({
             className="w-[370px] disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 "
             disabled={selectedMovies.length < 3}
           >
-            Continue
+            Get My Recommendations
           </button>
         </div>
       </div>

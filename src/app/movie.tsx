@@ -134,9 +134,7 @@ export default function Movie({
             <h3 className="text-2xl font-bold text-primary">Description</h3>
             {movie.overview}
           </div>
-          <div>
-            <h2>Where to watch</h2>
-          </div>
+          <div>{/* <h2>Where to watch</h2> */}</div>
         </div>
       </div>
     </div>

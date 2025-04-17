@@ -132,16 +132,16 @@ export default function Categories({
         </div>
         <div className="flex flex-col items-center">
           <h1 className="text-2xl max-w-[380px] font-extrabold text-left">
-            Select a Category
+            Choose Your Starting Genre
           </h1>
           <p className="max-w-[380px] text-left text-gray-500">
-            We&apos;ll take care of the rest!
+            Select one genre to help us find movies you&apos;ll like.
           </p>
           <div className="relative min-w-[370px] p-0 m-0">
             <input
               className="border border-primary shadow rounded py-2 px-3 w-full mt-2 text-primary placeholder-primaryHover pl-8"
               type="text"
-              placeholder="Seach"
+              placeholder="Seach genre..."
               value={category}
               onChange={handleShearch}
             />

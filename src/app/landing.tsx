@@ -18,15 +18,17 @@ export default function Lnading({
           />
         </div>
         <h1 className="text-4xl font-extrabold text-center">
-          Find your next movie
+          Discover Your Next Favorite Movie.
         </h1>
         <p
           style={{ margin: '0 auto' }}
           className="max-w-[380px] text-center text-gray-500 mt-2"
         >
-          Now your finances are in one place and always under control
+          Tired of endless Browse? Tell us a few movies you love, and our smart
+          engine will find hidden gems and perfect matches tailored to your
+          taste.
         </p>
-        <div className="flex justify-center mt-8 max-w-[380px]">
+        <div className="flex justify-center m-0 m-auto mt-8 max-w-[380px]">
           <button
             onClick={() => setPosition(2)}
             type="button"

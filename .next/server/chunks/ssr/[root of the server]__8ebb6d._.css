@@ -405,6 +405,10 @@ img, video {
   margin: .75rem;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .-mt-20 {
   margin-top: -5rem;
 }
@@ -459,6 +463,10 @@ img, video {
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-10 {
@@ -559,6 +567,10 @@ img, video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[380px\] {
+  width: 380px;
 }
 
 .min-w-\[370px\] {
@@ -911,6 +923,10 @@ body {
 
   .md\:w-\[40\%\] {
     width: 40%;
+  }
+
+  .md\:w-\[100\%\] {
+    width: 100%;
   }
 
   .md\:max-w-\[80\%\] {
