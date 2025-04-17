@@ -114,100 +114,94 @@ export default function SelectMovies({
 
   return (
     <div className="h-screen flex flex-col items-center  bg-background overflow-hidden">
-      <div>
-        <div
-          style={{
-            margin: '0 auto',
-          }}
-          className="flex p-2 justify-between mb-4"
-        >
-          <span onClick={() => setPosition(2)}>
+      {/* Header */}
+      <div className="flex w-screen p-2 justify-around mb-4">
+        <Image
+          onClick={() => setPosition(2)}
+          className=" cursor-pointer border border-primaryHover shadow rounded w-9 p-2"
+          src="/back.png"
+          alt="back button"
+          width={20}
+          height={20}
+        />
+        <Image src="/logo_2.png" alt="logo" width={20} height={20} />
+      </div>
+      {/* Text */}
+      <div className="flex flex-col items-center">
+        <h1 className="text-2xl w-[380px] md:w-[100%] font-extrabold text-center">
+          {` Which ${selectedCategories[0].name} Movies Did You Like?`}
+        </h1>
+        <p className="w-[380px] md:w-[100%] text-center text-gray-500">
+          Pick at least 3 (and up to 5) movies from this list that you genuinely
+          enjoyed. The more you select, the better your recommendations!
+        </p>
+      </div>
+      {/* Movies */}
+      <div
+        style={{ margin: '0 auto' }}
+        className="overflow-auto flex h-[80vh] w-[100%] flex-wrap justify-center"
+      >
+        {cleanData.map((movie: MovieBase) => (
+          <div
+            onClick={() => {
+              if (
+                selectedMovies.some(
+                  (selectedMovie) => selectedMovie.id === movie.id
+                )
+              ) {
+                setSelectedMovies(
+                  selectedMovies.filter(
+                    (selectedMovie) => selectedMovie.id !== movie.id
+                  )
+                );
+                return;
+              }
+              setSelectedMovies([...selectedMovies, movie]);
+            }}
+            key={movie.id}
+            className={`border border-secondary shadow rounded rounded-lg cursor-pointer w-40 h-60 m-2 hover:border-primary hover:border relative`} // Added relative positioning
+          >
             <Image
-              className=" cursor-pointer border border-primaryHover shadow rounded w-9 p-2"
-              src="/back.png"
-              alt="back button"
+              className="rounded rounded-lg absolute top-1 right-1"
+              src={`/checkbox.png`}
+              alt="checkbox"
               width={20}
               height={20}
-            />
-          </span>
-          <Image src="/logo_2.png" alt="logo" width={20} height={20} />
-        </div>
-
-        <div className="flex flex-col items-center">
-          <h1 className="text-2xl w-[380px] md:w-[100%] font-extrabold text-center">
-            {` Which ${selectedCategories[0].name} Movies Did You Like?`}
-          </h1>
-          <p className="w-[380px] md:w-[100%] text-center text-gray-500">
-            Pick at least 3 (and up to 5) movies from this list that you
-            genuinely enjoyed. The more you select, the better your
-            recommendations!
-          </p>
-        </div>
-        <div
-          style={{ margin: '0 auto' }}
-          className="overflow-auto flex h-[80vh] w-[100%] flex-wrap justify-center"
-        >
-          {cleanData.map((movie: MovieBase) => (
-            <div
-              onClick={() => {
-                if (
-                  selectedMovies.some(
-                    (selectedMovie) => selectedMovie.id === movie.id
-                  )
-                ) {
-                  setSelectedMovies(
-                    selectedMovies.filter(
-                      (selectedMovie) => selectedMovie.id !== movie.id
-                    )
-                  );
-                  return;
-                }
-                setSelectedMovies([...selectedMovies, movie]);
+              style={{
+                display: selectedMovies.some(
+                  (selectedMovie) => selectedMovie.id === movie.id
+                )
+                  ? 'block'
+                  : 'none',
               }}
-              key={movie.id}
-              className={`border border-secondary shadow rounded rounded-lg cursor-pointer w-40 h-60 m-2 hover:border-primary hover:border relative`} // Added relative positioning
-            >
-              <Image
-                className="rounded rounded-lg absolute top-1 right-1"
-                src={`/checkbox.png`}
-                alt="checkbox"
-                width={20}
-                height={20}
-                style={{
-                  display: selectedMovies.some(
-                    (selectedMovie) => selectedMovie.id === movie.id
-                  )
-                    ? 'block'
-                    : 'none',
-                }}
-              />
-              <Image
-                style={{ objectFit: 'contain' }}
-                className="rounded rounded-lg"
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                alt="back button"
-                height={300}
-                width={200}
-              />
-            </div>
-          ))}
-        </div>
-        <div
-          style={{
-            margin: '0 auto',
-            borderTop: '5px solid rgb(236, 236, 236)',
-          }}
-          className="mt-5 h-[8vh] flex justify-center items-center"
+            />
+            <Image
+              style={{ objectFit: 'contain' }}
+              className="rounded rounded-lg"
+              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              alt="back button"
+              height={300}
+              width={200}
+            />
+          </div>
+        ))}
+      </div>
+      {/* Footer */}
+      <div
+        style={{
+          margin: '0 auto',
+          borderTop: '5px solid rgb(236, 236, 236)',
+        }}
+        className="mt-5 h-[8vh] flex justify-center items-center w-[100%]"
+      >
+        <button
+          onClick={() => setPosition(4)}
+          type="button"
+          className="w-[370px] disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 "
+          disabled={selectedMovies.length < 3}
         >
-          <button
-            onClick={() => setPosition(4)}
-            type="button"
-            className="w-[370px] disabled:opacity-75 text-white bg-primary enabled:hover:bg-primaryHover focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 "
-            disabled={selectedMovies.length < 3}
-          >
-            Get My Recommendations
-          </button>
-        </div>
+          Get My Recommendations
+        </button>
       </div>
     </div>
   );
