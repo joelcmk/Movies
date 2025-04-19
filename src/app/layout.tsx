@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
+import { PostHogProvider } from 'src/components/PostHogProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,8 +32,10 @@ export default function RootLayout({
  bg-white dark:bg-black // Example: white in light, black in dark
 `}
       >
-        {children}
-        <Analytics />
+        <PostHogProvider>
+          {children}
+          <Analytics />
+        </PostHogProvider>
       </body>
     </html>
   );
