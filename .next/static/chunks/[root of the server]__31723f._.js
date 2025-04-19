@@ -2054,14 +2054,11 @@ Object.defineProperty(exports, "normalizePathTrailingSlash", {
 const _removetrailingslash = __turbopack_require__("[project]/node_modules/next/dist/shared/lib/router/utils/remove-trailing-slash.js [client] (ecmascript)");
 const _parsepath = __turbopack_require__("[project]/node_modules/next/dist/shared/lib/router/utils/parse-path.js [client] (ecmascript)");
 const normalizePathTrailingSlash = (path)=>{
-    if (!path.startsWith('/') || __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.__NEXT_MANUAL_TRAILING_SLASH) {
+    if (!path.startsWith('/') || ("TURBOPACK compile-time value", true)) {
         return path;
     }
-    const { pathname, query, hash } = (0, _parsepath.parsePath)(path);
-    if ("TURBOPACK compile-time falsy", 0) {
-        "TURBOPACK unreachable";
-    }
-    return "" + (0, _removetrailingslash.removeTrailingSlash)(pathname) + query + hash;
+    "TURBOPACK unreachable";
+    const pathname = undefined, query = undefined, hash = undefined;
 };
 if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
     Object.defineProperty(exports.default, '__esModule', {
@@ -6758,19 +6755,21 @@ function getMiddlewareData(source, response, options) {
                 let as = (0, _addlocale.addLocale)(pathnameInfo.pathname, pathnameInfo.locale);
                 if ((0, _isdynamic.isDynamicRoute)(as) || !rewriteHeader && pages.includes((0, _normalizelocalepath.normalizeLocalePath)((0, _removebasepath.removeBasePath)(as), options.router.locales).pathname)) {
                     const parsedSource = (0, _getnextpathnameinfo.getNextPathnameInfo)((0, _parserelativeurl.parseRelativeUrl)(source).pathname, {
-                        nextConfig: ("TURBOPACK compile-time falsy", 0) ? ("TURBOPACK unreachable", undefined) : nextConfig,
+                        nextConfig: ("TURBOPACK compile-time truthy", 1) ? undefined : ("TURBOPACK unreachable", undefined),
                         parseData: true
                     });
                     as = (0, _addbasepath.addBasePath)(parsedSource.pathname);
                     parsedRewriteTarget.pathname = as;
                 }
-                if ("TURBOPACK compile-time falsy", 0) {
-                    "TURBOPACK unreachable";
-                } else if (!pages.includes(fsPathname)) {
-                    const resolvedPathname = resolveDynamicRoute(fsPathname, pages);
-                    if (resolvedPathname !== fsPathname) {
-                        fsPathname = resolvedPathname;
+                if ("TURBOPACK compile-time truthy", 1) {
+                    const result = (0, _resolverewrites.default)(as, pages, rewrites, parsedRewriteTarget.query, (path)=>resolveDynamicRoute(path, pages), options.router.locales);
+                    if (result.matchedPage) {
+                        parsedRewriteTarget.pathname = result.parsedAs.pathname;
+                        as = parsedRewriteTarget.pathname;
+                        Object.assign(parsedRewriteTarget.query, result.parsedAs.query);
                     }
+                } else {
+                    "TURBOPACK unreachable";
                 }
                 const resolvedHref = !pages.includes(fsPathname) ? resolveDynamicRoute((0, _normalizelocalepath.normalizeLocalePath)((0, _removebasepath.removeBasePath)(parsedRewriteTarget.pathname), options.router.locales).pathname, pages) : fsPathname;
                 if ((0, _isdynamic.isDynamicRoute)(resolvedHref)) {
@@ -7293,8 +7292,27 @@ class Router {
         if (shouldResolveHref && pathname !== '/_error') {
             ;
             options._shouldResolveHref = true;
-            if (("TURBOPACK compile-time value", false) && as.startsWith('/')) {
-                "TURBOPACK unreachable";
+            if (("TURBOPACK compile-time value", true) && as.startsWith('/')) {
+                const rewritesResult = (0, _resolverewrites.default)((0, _addbasepath.addBasePath)((0, _addlocale.addLocale)(cleanedAs, nextState.locale), true), pages, rewrites, query, (p)=>resolveDynamicRoute(p, pages), this.locales);
+                if (rewritesResult.externalDest) {
+                    handleHardNavigation({
+                        url: as,
+                        router: this
+                    });
+                    return true;
+                }
+                if (!isMiddlewareMatch) {
+                    resolvedAs = rewritesResult.asPath;
+                }
+                if (rewritesResult.matchedPage && rewritesResult.resolvedHref) {
+                    // if this directly matches a page we need to update the href to
+                    // allow the correct page chunk to be loaded
+                    pathname = rewritesResult.resolvedHref;
+                    parsed.pathname = (0, _addbasepath.addBasePath)(pathname);
+                    if (!isMiddlewareMatch) {
+                        url = (0, _formaturl.formatWithValidation)(parsed);
+                    }
+                }
             } else {
                 parsed.pathname = resolveDynamicRoute(pathname, pages);
                 if (parsed.pathname !== pathname) {
@@ -8078,7 +8096,7 @@ class Router {
         // back from external site
         this.isSsr = true;
         this.isLocaleDomain = false;
-        this.isReady = !!(self.__NEXT_DATA__.gssp || self.__NEXT_DATA__.gip || self.__NEXT_DATA__.isExperimentalCompile || self.__NEXT_DATA__.appGip && !self.__NEXT_DATA__.gsp || !autoExportDynamic && !self.location.search && !("TURBOPACK compile-time value", false));
+        this.isReady = !!(self.__NEXT_DATA__.gssp || self.__NEXT_DATA__.gip || self.__NEXT_DATA__.isExperimentalCompile || self.__NEXT_DATA__.appGip && !self.__NEXT_DATA__.gsp || !autoExportDynamic && !self.location.search && !("TURBOPACK compile-time value", true));
         if ("TURBOPACK compile-time falsy", 0) {
             "TURBOPACK unreachable";
         }
@@ -18697,7 +18715,7 @@ class Container extends _react.default.Component {
         // - if it is a client-side skeleton (fallback render)
         // - if middleware matches the current page (may have rewrite params)
         // - if rewrites in next.config.js match (may have rewrite params)
-        if (router.isSsr && (initialData.isFallback || initialData.nextExport && ((0, _isdynamic.isDynamicRoute)(router.pathname) || location.search || ("TURBOPACK compile-time value", false) || initialMatchesMiddleware) || initialData.props && initialData.props.__N_SSG && (location.search || ("TURBOPACK compile-time value", false) || initialMatchesMiddleware))) {
+        if (router.isSsr && (initialData.isFallback || initialData.nextExport && ((0, _isdynamic.isDynamicRoute)(router.pathname) || location.search || ("TURBOPACK compile-time value", true) || initialMatchesMiddleware) || initialData.props && initialData.props.__N_SSG && (location.search || ("TURBOPACK compile-time value", true) || initialMatchesMiddleware))) {
             // update query on mount for exported pages
             router.replace(router.pathname + '?' + String((0, _querystring.assign)((0, _querystring.urlQueryToSearchParams)(router.query), new URLSearchParams(location.search))), asPath, {
                 // @ts-ignore
