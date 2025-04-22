@@ -114,7 +114,10 @@ export default function SelectMovies({
       {/* Header */}
       <div className="flex w-screen p-2 justify-around mb-4">
         <Image
-          onClick={() => setPosition(2)}
+          onClick={() => {
+            setPosition(2);
+            setSelectedMovies([]);
+          }}
           className=" cursor-pointer border border-primaryHover shadow rounded w-9 p-2"
           src="/back.png"
           alt="back button"
