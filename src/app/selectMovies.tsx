@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { MovieBase } from '../../utils/types';
+import { SelectedMoviesList } from '@/components/selectedMoviesList';
 
 export default function SelectMovies({
   setPosition,
@@ -39,10 +40,6 @@ export default function SelectMovies({
   useEffect(() => {
     const fetchDataLoop = async () => {
       const pageNumbers: Set<number> = new Set();
-      // while (pageNumbers.size < 10) {
-      //   const pageNumber = Math.floor(Math.random() * 10) + 1;
-      //   pageNumbers.add(pageNumber);
-      // }
 
       for (let i = 1; i <= 10; i++) {
         pageNumbers.add(i);
@@ -135,6 +132,13 @@ export default function SelectMovies({
           Pick at least 3 (and up to 5) movies from this list that you genuinely
           enjoyed. The more you select, the better your recommendations!
         </p>
+      </div>
+      {/* Selected Movies List  */}
+      <div>
+        <SelectedMoviesList
+          selectedMovies={selectedMovies}
+          setSelectedMovies={setSelectedMovies}
+        />
       </div>
       {/* Movies */}
       <div

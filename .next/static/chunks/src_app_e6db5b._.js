@@ -631,10 +631,6 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
             const fetchDataLoop = {
                 "SelectMovies.useEffect.fetchDataLoop": async ()=>{
                     const pageNumbers = new Set();
-                    // while (pageNumbers.size < 10) {
-                    //   const pageNumber = Math.floor(Math.random() * 10) + 1;
-                    //   pageNumbers.add(pageNumber);
-                    // }
                     for(let i = 1; i <= 10; i++){
                         pageNumbers.add(i);
                     }
@@ -674,12 +670,12 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                 children: "Loading..."
             }, void 0, false, {
                 fileName: "[project]/src/app/selectMovies.tsx",
-                lineNumber: 79,
+                lineNumber: 75,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/selectMovies.tsx",
-            lineNumber: 78,
+            lineNumber: 74,
             columnNumber: 7
         }, this);
     }
@@ -693,12 +689,12 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/selectMovies.tsx",
-                lineNumber: 87,
+                lineNumber: 83,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/selectMovies.tsx",
-            lineNumber: 86,
+            lineNumber: 82,
             columnNumber: 7
         }, this);
     }
@@ -737,7 +733,7 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                         height: 20
                     }, void 0, false, {
                         fileName: "[project]/src/app/selectMovies.tsx",
-                        lineNumber: 119,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -747,13 +743,13 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                         height: 20
                     }, void 0, false, {
                         fileName: "[project]/src/app/selectMovies.tsx",
-                        lineNumber: 127,
+                        lineNumber: 123,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/selectMovies.tsx",
-                lineNumber: 118,
+                lineNumber: 114,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -764,7 +760,7 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                         children: ` Which ${selectedCategories[0].name} Movies Did You Like?`
                     }, void 0, false, {
                         fileName: "[project]/src/app/selectMovies.tsx",
-                        lineNumber: 131,
+                        lineNumber: 127,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -772,13 +768,27 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
                         children: "Pick at least 3 (and up to 5) movies from this list that you genuinely enjoyed. The more you select, the better your recommendations!"
                     }, void 0, false, {
                         fileName: "[project]/src/app/selectMovies.tsx",
-                        lineNumber: 134,
+                        lineNumber: 130,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/selectMovies.tsx",
-                lineNumber: 130,
+                lineNumber: 126,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SelectedMoviesList, {
+                    tags: tags,
+                    onRemove: removeTag
+                }, void 0, false, {
+                    fileName: "[project]/src/app/selectMovies.tsx",
+                    lineNumber: 137,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/app/selectMovies.tsx",
+                lineNumber: 136,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -863,7 +873,7 @@ selectedCategories, setSelectedMovies, selectedMovies }) {
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/selectMovies.tsx",
-        lineNumber: 116,
+        lineNumber: 112,
         columnNumber: 5
     }, this);
 }
@@ -1399,7 +1409,7 @@ function Home() {
                 setPosition: setPosition
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 26
             }, this),
             position === 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1408,7 +1418,7 @@ function Home() {
                 setSelectedProviders: setSelectedProviders
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 29,
+                lineNumber: 30,
                 columnNumber: 9
             }, this),
             position === 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$categories$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1417,7 +1427,7 @@ function Home() {
                 setSelectedCategories: setSelectedCategories
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 36,
+                lineNumber: 37,
                 columnNumber: 9
             }, this),
             position === 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$selectMovies$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1428,7 +1438,7 @@ function Home() {
                 selectedMovies: selectedMovies
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 43,
+                lineNumber: 44,
                 columnNumber: 9
             }, this),
             position === 4 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$recommendedMovies$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1439,7 +1449,7 @@ function Home() {
                 setSelectedRecommendedMovie: setSelectedRecommendedMovie
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 9
             }, this),
             position === 5 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$movie$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1448,13 +1458,13 @@ function Home() {
                 selectedRecommendedMovie: selectedRecommendedMovie
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 61,
+                lineNumber: 62,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 5
     }, this);
 }
