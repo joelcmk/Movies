@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
-import Landing from './landing';
+// import Landing from './landing';
+import Landing2 from './landing2';
+
 import Provider from './provider';
 import Categories from './categories';
 import SelectMovies from './selectMovies';
@@ -24,7 +26,9 @@ export default function Home() {
   console.log(selectedRecommendedMovie, ' recMovie page.tsx');
   return (
     <div>
-      {position === 0 && <Landing setPosition={setPosition} />}
+      {/* {position === 0 && <Landing setPosition={setPosition} />} */}
+      {position === 0 && <Landing2 setPosition={setPosition} />}
+
       {position === 1 && (
         <Provider
           setPosition={setPosition}
